@@ -35,7 +35,7 @@ public class AuthorizeController {
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
                            @RequestParam(name = "state") String state,
-                           //HttpServletRequest request,可以进行自动登录了，request就不需要了
+                           //HttpServletRequest request,//可以进行自动登录了，request就不需要了
                            HttpServletResponse response
                            ) throws IOException {
 
@@ -56,16 +56,16 @@ public class AuthorizeController {
             user.setAccountId(String.valueOf(githubUser.getId()));//强制转换一下
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtModified());
+            user.setAvatarUrl(githubUser.getAvatar_url());
             userMapper.insert(user);//   存储到数据库中
             response.addCookie(new Cookie("token",token));
             //登录成功，写cookie和session
-            request.getSession().setAttribute("user",githubUser);
+            //request.getSession().setAttribute("user",githubUser);
             return "redirect:/";//回到首页
         }else{
             return "redirect:/";
             //登录失败、重新登录
         }
-
         //return "index";
     }
 }
