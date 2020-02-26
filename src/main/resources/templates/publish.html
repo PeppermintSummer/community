@@ -16,7 +16,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">婧婧社区</span>
             </button>
-            <a class="navbar-brand" href="#">婧婧社区</a>
+            <a class="navbar-brand" href="/">婧婧社区</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">问题补充(必填)</label>
-                        <textarea name="description" id="description" th:value="${description}" class="form-control" cols="30" rows="10"></textarea>
+                        <textarea name="description" id="description" th:text="${description}" class="form-control" cols="30" rows="10"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="title">添加标签</label>
@@ -67,7 +67,10 @@
 
                     <div class="container-fluid main">
                         <div class="row">
-                            <div class="alert alert-danger col-lg-9 col-md-12 col-sm-12 col-xs-12"  th:text="${error}" th:if="${error != null}"></div>
+                            <div class=" col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                                <div class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                                     th:text="${error}" th:if="${error != null}"></div>
+                            </div>
                             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                 <button type="submit" class="btn btn-success btn-publish ">发布</button>
                             </div>

@@ -7,7 +7,7 @@ public class GithubUser {
     private String name;
     private Long id;   //防止用户暴增越界
     private String bio;
-    private String avatar_url;
+    private String avatarUrl;
 
 
 
