@@ -20,31 +20,20 @@ import java.util.List;
 @Controller
 @Component
 public class IndexController {
-
-    @Autowired
-    private UserMapper userMapper;
+//
+//    @Autowired
+//    private UserMapper userMapper;
 
     @Autowired
     private QuestionService questionService;
 
     @GetMapping("/")   //访问首页
-    public String index(HttpServletRequest request,
+    public String index(//HttpServletRequest request,
                         Model model,
                         @RequestParam(name = "page",defaultValue = "1") Integer page,
                         @RequestParam(name = "size",defaultValue = "6") Integer size
                         ){
-        Cookie[] cookies = request.getCookies();//request可以去设置cookie
-        if (cookies!=null && cookies.length!=0)
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("token")) {
-                    String token = cookie.getValue();
-                    User user = userMapper.findByToken(token);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                    break;
-                }
-            }
+
         PaginationDTO pagination=questionService.list(page,size);//带有用户信息和question信息
         model.addAttribute("pagination",pagination);
         return "index";
