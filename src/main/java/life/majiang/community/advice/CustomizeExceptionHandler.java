@@ -23,7 +23,6 @@ public class CustomizeExceptionHandler {
                         HttpServletRequest request,
                         HttpServletResponse response){
         //HttpStatus status=getStatus(request);
-
         String contentType = request.getContentType();
         if ("application/json".equals(contentType)){
             ResultDTO resultDTO;
@@ -36,7 +35,7 @@ public class CustomizeExceptionHandler {
             try {
                 response.setContentType("application/json");
                 response.setStatus(200);
-                response.setCharacterEncoding("UTF-8");
+                response.setCharacterEncoding("utf-8");
                 PrintWriter writer = response.getWriter();
                 writer.write(JSON.toJSONString(resultDTO));
                 writer.close(); //关闭流
@@ -50,7 +49,7 @@ public class CustomizeExceptionHandler {
             if (e instanceof CustomizeException){
                 model.addAttribute("message",e.getMessage());
             }else {
-                model.addAttribute("message", CustomizeErrorCode.SYSTEM_ERROR.getmessage());
+                model.addAttribute("message", CustomizeErrorCode.SYSTEM_ERROR.getMessage());
             }
             return new ModelAndView("error");
         }
