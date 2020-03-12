@@ -1,6 +1,6 @@
 package life.majiang.community.controller;
 
-import life.majiang.community.dto.CommentDTO;
+import life.majiang.community.dto.CommentCreateDTO;
 import life.majiang.community.dto.ResultDTO;
 import life.majiang.community.exception.CustomizeErrorCode;
 import life.majiang.community.model.Comment;
@@ -24,7 +24,7 @@ public class CommentController {
     @ResponseBody  //通过ResponseBody把我们的对象自动化成JSON发到前端
     @RequestMapping(value = "/comment",method = RequestMethod.POST)
     public Object post( //@RequestParam(name = "parentId") Long parentId
-                       @RequestBody CommentDTO commentDTO,
+                       @RequestBody CommentCreateDTO commentCreateDTO,
                        HttpServletRequest request){//自动生成   JSON
         User user = (User) request.getSession().getAttribute("user");
         if (user==null){
@@ -32,9 +32,9 @@ public class CommentController {
         }
 
         Comment comment = new Comment();
-        comment.setParentId(commentDTO.getParentId());
-        comment.setContent(commentDTO.getContent());
-        comment.setType(commentDTO.getType());
+        comment.setParentId(commentCreateDTO.getParentId());
+        comment.setContent(commentCreateDTO.getContent());
+        comment.setType(commentCreateDTO.getType());
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setCommentator(user.getId());
