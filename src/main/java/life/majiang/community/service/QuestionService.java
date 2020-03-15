@@ -43,8 +43,9 @@ public class QuestionService {
         if(totalCount % size==0){
             totalPage=totalCount/size;
         }
-        else totalPage=totalCount/size+1;
-
+        else {
+            totalPage = totalCount / size + 1;
+        }
         if (page<1){
             page=1;
         }
@@ -69,7 +70,7 @@ public class QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-        paginationDTO.setQuestions(questionDTOList);
+        paginationDTO.setData(questionDTOList);
         return paginationDTO;
     }    //实现一个组装的作用User和Question
 
@@ -87,8 +88,9 @@ public class QuestionService {
         if(totalCount % size==0){
             totalPage=totalCount/size;
         }
-        else totalPage=totalCount/size+1;
-
+        else {
+            totalPage = totalCount / size + 1;
+        }
         if (page<1){
             page=1;
         }
@@ -112,7 +114,7 @@ public class QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-        paginationDTO.setQuestions(questionDTOList);
+        paginationDTO.setData(questionDTOList);
         return paginationDTO;
     }
 
