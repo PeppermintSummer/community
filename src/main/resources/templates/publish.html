@@ -39,7 +39,10 @@
                                 path : "/js/lib/",
                                 delay: 0,
                                 watch: false,
-                                placeholder: "Enjoying Your Coding!!"
+                                placeholder: "Enjoying Your Coding!!",
+                                imageUpload: true,
+                                imageFormats: ["jpg","jpeg","gif","png","bmp","webp"],
+                                imageUploadURL: "/file/upload"
                             });
                         });
                     </script>
@@ -48,7 +51,6 @@
                         <label for="title">添加标签</label>
                         <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" autocomplete="off" placeholder="输入标签(以,号分隔)"
                                 onclick="showSelectTag()">
-
                         <div id="select-tag" class="publish-tag-tab">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" th:each="selectCategory,selectCategoryStat: ${tags}" th:class="${selectCategoryStat.first ? 'active':''}">
