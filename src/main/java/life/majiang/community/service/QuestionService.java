@@ -48,7 +48,7 @@ public class QuestionService {
         //Integer totalCount = questionMapper.count();//拿到所有的分页数
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         questionQueryDTO.setSearch(search);
-        Integer totalCount = questionExtMapper.countBySerach(questionQueryDTO);//拿到所有的分页数
+        Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO); //拿到所有的分页数
 
         if(totalCount % size==0){
             totalPage=totalCount/size;

@@ -31,6 +31,7 @@ public class IndexController {
         // 搜索采用正则匹配的方式,也可以ElasticSearch,dubbo,springcloud,
         PaginationDTO pagination=questionService.list(search,page,size); //带有用户信息和question信息
         model.addAttribute("pagination",pagination);
+        model.addAttribute("search",search);
         return "index";
     }
 //    public String hello(@RequestParam(name="name") String name, Model model){

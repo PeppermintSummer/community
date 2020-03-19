@@ -35,7 +35,7 @@
     select * from QUESTION where id !=#{id} and tag regexp #{tag}
   </select>
 
-  <select id="countBySearch" parameterType="life.majiang.community.dto.QuestionQueryDTO" resultMap="java.lang.Integer">
+  <select id="countBySearch" parameterType="life.majiang.community.dto.QuestionQueryDTO" resultType="java.lang.Integer">
     select count(*) from QUESTION
     <where>
       <if test="search != null">

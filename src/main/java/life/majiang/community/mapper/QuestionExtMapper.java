@@ -10,7 +10,7 @@ public interface QuestionExtMapper {
     int incCommentCount(Question record);
     List<Question> selectRelated(Question question);
 
-    Integer countBySerach(QuestionQueryDTO questionQueryDTO);
+    Integer countBySearch(QuestionQueryDTO questionQueryDTO);
 
     List<Question> selectBySearch(QuestionQueryDTO questionQueryDTO);
 }
