@@ -33,7 +33,7 @@ public class TagCache {
 
         TagDTO other=new TagDTO();
         other.setCategoryName("其他");
-        other.setTags(Arrays.asList("平常","趣事","小分享"));
+        other.setTags(Arrays.asList("平常","趣事","小分享","算法"));
         tagDTOS.add(other);
 
         return tagDTOS;

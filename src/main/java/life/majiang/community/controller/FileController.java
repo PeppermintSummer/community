@@ -18,19 +18,16 @@ public class FileController {
 
     @ResponseBody
     @RequestMapping("/file/upload")
-    public FileDTO upload(HttpServletRequest request){
+    public FileDTO upload(HttpServletRequest request)
+    {
         MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
         MultipartFile file = multipartHttpServletRequest.getFile("editormd-image-file");
 
-//        try {
-//            aliCloudOSSProvider.upoloadDocument(file.getInputStream(), file.getContentType(),file.getOriginalFilename());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        String url=aliCloudOSSProvider.upoloadDocument(file, file.getContentType());
 
         FileDTO fileDTO = new FileDTO();
         fileDTO.setSuccess(1);
-        fileDTO.setUrl("/images/Example.png");
+        fileDTO.setUrl(url);
         return fileDTO;
     }
 }

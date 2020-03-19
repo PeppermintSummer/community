@@ -6,11 +6,13 @@
 [Lombok]()
 
 ##工具
-[Flayway命令](https://flywaydb.org/getstarted/firststeps/maven#migrating-the-database)
+[Flayway](https://flywaydb.org/getstarted/firststeps/maven#migrating-the-database)
 
 [MyBatis Generator]()
 
-maven bash
+
+
+##### maven bash
 ```bash
 mvn flyway:migrate
 mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
