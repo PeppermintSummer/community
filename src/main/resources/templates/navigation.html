@@ -23,7 +23,7 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li th:if="${session.user != null}">
-                        <a href="/publish">发布</a>
+                        <a href="/publish"><img src="/images/Publish.png" width="20px"></a>
                     </li>
                     <li><a href="/profile/replies"><img src="/images/Notification.png" width="20px"><span class="badge" th:text="${session.unreadCount}"></span> </a></li>
                     <li class="dropdown" th:if="${session.user != null}">
@@ -32,8 +32,8 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/profile/questions">我的提问</a></li>
-                            <li><a href="/logout">退出登录</a></li>
+                            <li><a href="/profile/questions"><img src="/images/My_question.png" width="20px">我的提问</a></li>
+                            <li><a href="/logout"><img src="/images/Log_out.png"  width="20px">退出登录</a></li>
                         </ul>
                     </li>
                     <li th:if="${session.user==null}">
