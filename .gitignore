@@ -1,5 +1,6 @@
 HELP.md
 
+logs/
 #npm
 node_modules/
 target/

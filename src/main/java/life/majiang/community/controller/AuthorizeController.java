@@ -6,6 +6,7 @@ import life.majiang.community.mapper.UserMapper;
 import life.majiang.community.model.User;
 import life.majiang.community.provider.GithubProvider;
 import life.majiang.community.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 @Controller
+@Slf4j //日志
 public class AuthorizeController {
     @Autowired     //写好的实例加载上下文
     private GithubProvider githubProvider;
@@ -66,6 +68,7 @@ public class AuthorizeController {
             //request.getSession().setAttribute("user",githubUser);
             return "redirect:/";//回到首页
         }else{
+            log.error("callback get github ,{}",githubUser); //打印日志记录问题
             return "redirect:/";
             //登录失败、重新登录
         }
