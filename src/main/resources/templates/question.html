@@ -80,7 +80,7 @@
                                 <span class="glyphicon glyphicon-thumbs-up icon"></span>
                                 <span  th:data-id="${comment.id}" onclick="collapseComments(this)" class="comment-icon">
                                     <span class="glyphicon glyphicon-comment"></span>
-                                    <span  th:text="${comment.commentCount}"></span>
+                                    <span  th:text="${comment.commentCount}">个回复</span>
                                 </span>
                                 <span class="pull-right" th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
                             </div>
@@ -153,14 +153,13 @@
                 </div>
             </div>
 
-<!--            宣传号-->
-<!--            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
-<!--            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
-<!--                <h4>图</h4>-->
-<!--                <img class="img-thumbnail question-picture" src="/images/Example.png" >-->
-<!--            </div>-->
+<!--            哈哈-->
+            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4>推荐内容</h4>
+                <img class="img-thumbnail question-picture" src="/images/Mysql.gif" >
+            </div>
 
-<!--            相关问题-->
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>猜你喜欢</h4>

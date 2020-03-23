@@ -17,7 +17,7 @@
 
     <div class="container-fluid main">
         <div class="row">
-            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 发起</h2>
                 <hr>
                 <form action="/publish" method="post" >
@@ -68,9 +68,9 @@
                         </div>
                     </div>
 
-                    <div class="container-fluid main">
+<!--                    <div class="container-fluid main ">-->
                         <div class="row">
-                            <div class=" col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                                 <div class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xs-12"
                                      th:text="${error}" th:if="${error != null}"></div>
                             </div>
@@ -78,16 +78,16 @@
                                 <button type="submit" class="btn btn-success btn-publish ">发布</button>
                             </div>
                         </div>
-                    </div>
+<!--                    </div>-->
 
                 </form>
             </div>
-            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                <h3>问题发起指南</h3>
-                *问题标题：请用精简的语言描述您想发布的内容，不超过25字<br>
-                *问题补充：详细补充问题内容，并确保清晰直观，并提供相关资料<br>
-                *选择标签：选择1个或者多个合适的标签，不超过10个字,用逗号隔开<br>
-            </div>
+<!--            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">-->
+<!--                <h3>问题发起指南</h3>-->
+<!--                *问题标题：请用精简的语言描述您想发布的内容，不超过25字<br>-->
+<!--                *问题补充：详细补充问题内容，并确保清晰直观，并提供相关资料<br>-->
+<!--                *选择标签：选择1个或者多个合适的标签，不超过10个字,用逗号隔开<br>-->
+<!--            </div>-->
         </div>
     </div>
 

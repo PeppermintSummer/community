@@ -139,6 +139,8 @@ function selectTag(e) {
             $("#tag").val(value);
         }
     }
+}
 
-
+function notOpen() {
+    alert("暂未开放，请使用第三方登录 ^-^")
 }

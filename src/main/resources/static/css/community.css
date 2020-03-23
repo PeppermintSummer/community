@@ -1,11 +1,84 @@
+.bar-color{
+    background-color: #222;
+}
 body{
-    background-color: #efefef;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-color: #efefef;*/
+    background-image: url("/images/Bg2.png");
+}
+.bar-color{
+    color: #77F;
 }
 .main{
+    margin: 40px 200px;
     background-color: white;
-    margin: 30px;
+    box-shadow: 6px 6px 10px gray;
+    border-radius: 4px;
+    min-height: 700px;
+    /*margin: 20px;*/
+}
+.one-day-text{
+    font-size: 15px;
+}
+.logo {
+    font-size: 25px;
+    font-style: italic;
+    /*text-shadow: grey 10px 10px 4px;*/
 }
 
+.logo:hover {
+    text-decoration: none;
+}
+.login-body{
+    /*background-image: url("/images/Background_3.png");*/
+    background-image: url("http://peppermint.oss-cn-beijing.aliyuncs.com/image/jpeg/20200318/Background_3.jpg");
+}
+.login-main {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.login-page {
+    width: 714px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    opacity: 0.8;
+}
+.login-page-main {
+    padding: 50px;
+    height: 420px
+}
+.login-left {
+    height: 100%;
+    border-right: 1px solid #D2D2D2;
+    /*background-color: #eee;*/
+}
+.login-right {
+    height: 100%;
+    /*background-color: #eee;*/
+}
+.login-logo {
+    display: flex;
+}
+.login-form {
+    margin-top: 15px;
+}
+.login-other-all {
+    padding: 40px 24px;
+}
+.login-other {
+    display: block;
+    height: 40px;
+}
+.login-icon {
+    width: 20px;
+    height: 20px;
+}
 .btn-publish{
     float: right;
     margin-bottom: 15px;
@@ -17,6 +90,9 @@ body{
 }
 .media-body{
     padding-top: 10px;
+}
+.index-tag{
+    margin-bottom: 5px;
 }
 
 .text-desc{

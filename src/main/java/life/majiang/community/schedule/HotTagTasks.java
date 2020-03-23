@@ -21,7 +21,7 @@ public class HotTagTasks { //热门话题
     @Autowired
     private HotTagCache hotTagCache;
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 1000 * 60 * 60 *24) //24个小时更新一次
     //@Scheduled(cron = "0 0 1 * * *")
     public void  hotTagSchedule(){
         int offset=0;
@@ -30,11 +30,9 @@ public class HotTagTasks { //热门话题
         List<Question> list=new ArrayList<>();
 
         Map<String, Integer> priorities =new HashMap<>(); //HotTagCache.getTags();
-        while (offset==0 || list.size() == limit)
-        {
+        while (offset==0 || list.size() == limit) {
             list=questionMapper.selectByExampleWithRowbounds(new QuestionExample(), new RowBounds(offset,limit));
             for (Question question : list) {
-
                 String[] tags = StringUtils.split(question.getTag(), ",");
                 for (String tag : tags) {
                     Integer priority = priorities.get(tag);
@@ -47,17 +45,15 @@ public class HotTagTasks { //热门话题
             }
             offset+=limit;
         }
-        hotTagCache.setTags(priorities);
-
-        hotTagCache.getTags().forEach(
-                (k,v)->{
-                    System.out.print(k);
-                    System.out.print(":");
-                    System.out.print(v);
-                    System.out.println();
-                }
-        );
-
+//        hotTagCache.getTags().forEach(
+//                (k,v)->{
+//                    System.out.print(k);
+//                    System.out.print(":");
+//                    System.out.print(v);
+//                    System.out.println();
+//                }
+//        );
+        hotTagCache.updateTags(priorities);
         log.info("end {}",new Date());
     }
 }
