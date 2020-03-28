@@ -26,7 +26,13 @@
 - yum install maven
 - java -version
 - mvn -v
-- m
+- mvn clean compile package
+- cp src/main/resources/application.properties src/main/resources/application-production.properties
+- vim src/main/resources/application-production.properties
+- mvn package
+- java -jar -Dspring.profiles.active=production target/community-0.0.1-SNAPSHOT.jar
+- ps -aux  | grep java
+- git pull
 
 
 ##### maven bash

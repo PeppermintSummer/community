@@ -8,8 +8,8 @@
 
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
 
-        <jdbcConnection driverClass="org.h2.Driver"
-                        connectionURL="jdbc:h2:~/community"
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/community?serverTimezone=UTC"
                         userId="peppermint"
                         password="123456">
         </jdbcConnection>
